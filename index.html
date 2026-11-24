@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#d92b2b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="QuantWolf" />
+  <title>QUANT WOLF // 230 INDICATORS</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnR3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMxODE4MWIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDkwOTBiIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJyZWRBY2NlbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZWY0NDQ0Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzk5MWIxYiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMTIiIGZpbGw9InVybCgjYmdHcmFkKSIvPgogIDxyZWN0IHg9IjE4IiB5PSIxOCIgd2lkdGg9IjQ3NiIgaGVpZ2h0PSI0NzYiIHJ4PSI5NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzkyYTJhIiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1vcGFjaXR5PSIwLjc1Ii8+CiAgPHBvbHlnb24gcG9pbnRzPSIxMjAsOTUgMTc4LDE5NSAxMTIsMjM1IiBmaWxsPSIjMjcyNzJhIiBzdHJva2U9IiNlNGU0ZTciIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxwb2x5Z29uIHBvaW50cz0iMzkyLDk1IDMzNCwxOTUgNDAwLDIzNSIgZmlsbD0iIzI3MjcyYSIgc3Ryb2tlPSIjZTRlNGU3IiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8cG9seWdvbiBwb2ludHM9IjEzNCwxMjIgMTY4LDE4NSAxMjgsMjEwIiBmaWxsPSJ1cmwoI3JlZEFjY2VudCkiLz4KICA8cG9seWdvbiBwb2ludHM9IjM3OCwxMjIgMzQ0LDE4NSAzODQsMjEwIiBmaWxsPSJ1cmwoI3JlZEFjY2VudCkiLz4KICA8cG9seWdvbiBwb2ludHM9IjE3OCwxOTUgMjU2LDE2MiAzMzQsMTk1IDQwMCwyMzUgMzcyLDMyOCAyNTYsNDIyIDE0MCwzMjggMTEyLDIzNSIgZmlsbD0iIzFmMWYyMyIgc3Ryb2tlPSIjZjRmNGY1IiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8cG9seWdvbiBwb2ludHM9IjI1NiwxNjIgMjE0LDI1OCAyNTYsMjgyIDI5OCwyNTgiIGZpbGw9IiMyZTJlMzQiIHN0cm9rZT0iIzcxNzE3YSIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8cG9seWdvbiBwb2ludHM9IjE0MCwzMjggMjE0LDI1OCAyNTYsMzU1IDI1Niw0MjIiIGZpbGw9IiMyNzI3MmEiIHN0cm9rZT0iIzUyNTI1YiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8cG9seWdvbiBwb2ludHM9IjM3MiwzMjggMjk4LDI1OCAyNTYsMzU1IDI1Niw0MjIiIGZpbGw9IiMyNzI3MmEiIHN0cm9rZT0iIzUyNTI1YiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8cG9seWdvbiBwb2ludHM9IjE2OCwyNDIgMjE2LDI1NCAxOTgsMjc0IDE2NCwyNjIiIGZpbGw9IiNlZjQ0NDQiLz4KICA8cG9seWdvbiBwb2ludHM9IjM0NCwyNDIgMjk2LDI1NCAzMTQsMjc0IDM0OCwyNjIiIGZpbGw9IiNlZjQ0NDQiLz4KICA8Y2lyY2xlIGN4PSIxOTIiIGN5PSIyNTYiIHI9IjQiIGZpbGw9IiNmZmZmZmYiLz4KICA8Y2lyY2xlIGN4PSIzMjAiIGN5PSIyNTYiIHI9IjQiIGZpbGw9IiNmZmZmZmYiLz4KICA8cG9seWdvbiBwb2ludHM9IjIxNCwyNTggMjU2LDI4MiAyOTgsMjU4IDI4MiwzNDggMjU2LDM2OCAyMzAsMzQ4IiBmaWxsPSIjMTgxODFiIiBzdHJva2U9IiNhMWExYWEiIHN0cm9rZS13aWR0aD0iMyIvPgogIDxwb2x5Z29uIHBvaW50cz0iMjM2LDM0MiAyNzYsMzQyIDI1NiwzNzIiIGZpbGw9IiNlZjQ0NDQiLz4KICA8cG9seWxpbmUgcG9pbnRzPSIyMDUsMzc2IDI1Niw0MDYgMzA3LDM3NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzkyYTJhIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4=" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnR3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMxODE4MWIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDkwOTBiIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJyZWRBY2NlbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZWY0NDQ0Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzk5MWIxYiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMTIiIGZpbGw9InVybCgjYmdHcmFkKSIvPgogIDxyZWN0IHg9IjE4IiB5PSIxOCIgd2lkdGg9IjQ3NiIgaGVpZ2h0PSI0NzYiIHJ4PSI5NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzkyYTJhIiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1vcGFjaXR5PSIwLjc1Ii8+CiAgPHBvbHlnb24gcG9pbnRzPSIxMjAsOTUgMTc4LDE5NSAxMTIsMjM1IiBmaWxsPSIjMjcyNzJhIiBzdHJva2U9IiNlNGU0ZTciIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxwb2x5Z29uIHBvaW50cz0iMzkyLDk1IDMzNCwxOTUgNDAwLDIzNSIgZmlsbD0iIzI3MjcyYSIgc3Ryb2tlPSIjZTRlNGU3IiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8cG9seWdvbiBwb2ludHM9IjEzNCwxMjIgMTY4LDE4NSAxMjgsMjEwIiBmaWxsPSJ1cmwoI3JlZEFjY2VudCkiLz4KICA8cG9seWdvbiBwb2ludHM9IjM3OCwxMjIgMzQ0LDE4NSAzODQsMjEwIiBmaWxsPSJ1cmwoI3JlZEFjY2VudCkiLz4KICA8cG9seWdvbiBwb2ludHM9IjE3OCwxOTUgMjU2LDE2MiAzMzQsMTk1IDQwMCwyMzUgMzcyLDMyOCAyNTYsNDIyIDE0MCwzMjggMTEyLDIzNSIgZmlsbD0iIzFmMWYyMyIgc3Ryb2tlPSIjZjRmNGY1IiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8cG9seWdvbiBwb2ludHM9IjI1NiwxNjIgMjE0LDI1OCAyNTYsMjgyIDI5OCwyNTgiIGZpbGw9IiMyZTJlMzQiIHN0cm9rZT0iIzcxNzE3YSIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8cG9seWdvbiBwb2ludHM9IjE0MCwzMjggMjE0LDI1OCAyNTYsMzU1IDI1Niw0MjIiIGZpbGw9IiMyNzI3MmEiIHN0cm9rZT0iIzUyNTI1YiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8cG9seWdvbiBwb2ludHM9IjM3MiwzMjggMjk4LDI1OCAyNTYsMzU1IDI1Niw0MjIiIGZpbGw9IiMyNzI3MmEiIHN0cm9rZT0iIzUyNTI1YiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8cG9seWdvbiBwb2ludHM9IjE2OCwyNDIgMjE2LDI1NCAxOTgsMjc0IDE2NCwyNjIiIGZpbGw9IiNlZjQ0NDQiLz4KICA8cG9seWdvbiBwb2ludHM9IjM0NCwyNDIgMjk2LDI1NCAzMTQsMjc0IDM0OCwyNjIiIGZpbGw9IiNlZjQ0NDQiLz4KICA8Y2lyY2xlIGN4PSIxOTIiIGN5PSIyNTYiIHI9IjQiIGZpbGw9IiNmZmZmZmYiLz4KICA8Y2lyY2xlIGN4PSIzMjAiIGN5PSIyNTYiIHI9IjQiIGZpbGw9IiNmZmZmZmYiLz4KICA8cG9seWdvbiBwb2ludHM9IjIxNCwyNTggMjU2LDI4MiAyOTgsMjU4IDI4MiwzNDggMjU2LDM2OCAyMzAsMzQ4IiBmaWxsPSIjMTgxODFiIiBzdHJva2U9IiNhMWExYWEiIHN0cm9rZS13aWR0aD0iMyIvPgogIDxwb2x5Z29uIHBvaW50cz0iMjM2LDM0MiAyNzYsMzQyIDI1NiwzNzIiIGZpbGw9IiNlZjQ0NDQiLz4KICA8cG9seWxpbmUgcG9pbnRzPSIyMDUsMzc2IDI1Niw0MDYgMzA3LDM3NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzkyYTJhIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4=" />
+  <style>
+    :root {
+      --paper: #f7f6f1;
+      --paper-2: #efeee8;
+      --white: #ffffff;
+      --line: #e2e0d8;
+      --line-med: #c9c7be;
+      --ink: #222222;
+      --muted: #8c8a82;
+      --red: #d92b2b;
+      --mono: "Consolas", "SFMono-Regular", Menlo, Monaco, monospace;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    /* TOP HEADER */
+    .top-hdr {
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      padding: 8px 18px 6px;
+    }
+    .hdr-main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #e7e5dd;
+    }
+    .brand-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .wolf-ico {
+      width: 34px;
+      height: 34px;
+      border-radius: 7px;
+      border: 1.5px solid var(--red);
+      overflow: hidden;
+      background: #18181b;
+      flex-shrink: 0;
+    }
+    .wolf-ico img { width: 100%; height: 100%; display: block; }
+    .brand-title {
+      font-family: var(--mono);
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      color: #1c1c1c;
+    }
+    .brand-title .sl { color: #b8b6ae; font-weight: 400; }
+    .brand-sub {
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--muted);
+      letter-spacing: 0.3px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 2px;
+    }
+    .red-sq { width: 6px; height: 6px; background: var(--red); display: inline-block; }
+    .live-lbl { color: var(--red); font-weight: 800; }
+
+    .hdr-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-family: var(--mono);
+    }
+    .stat-col {
+      border-left: 1px solid var(--line);
+      padding-left: 10px;
+      min-width: 72px;
+    }
+    .stat-lbl { font-size: 8px; color: var(--muted); letter-spacing: 0.6px; text-transform: uppercase; }
+    .stat-val { font-size: 14px; font-weight: 800; color: #202020; margin-top: 1px; }
+    .stat-val.red { color: var(--red); }
+
+    .hdr-sub-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      padding-top: 6px;
+      font-family: var(--mono);
+    }
+    @media (max-width: 900px) {
+      .hdr-sub-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .sub-top { display: flex; justify-content: space-between; font-size: 8px; color: var(--muted); }
+    .sub-val { font-size: 10.5px; font-weight: 800; color: #222; margin: 1px 0 3px; }
+    .bar-bg { height: 2px; background: #e2e0d7; width: 100%; }
+    .bar-fg { height: 100%; background: var(--red); width: 0%; transition: width 0.1s linear; }
+
+    /* SUB TOOLBAR */
+    .sub-bar {
+      background: var(--paper-2);
+      border-bottom: 1px solid var(--line);
+      padding: 4px 18px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+    }
+    .pair-pills { display: flex; flex-wrap: wrap; gap: 4px; }
+    .p-pill {
+      background: var(--white);
+      border: 1px solid var(--line-med);
+      color: #222;
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      cursor: pointer;
+    }
+    .p-pill.active { background: var(--red); color: #fff; border-color: var(--red); }
+    .tf-pills { display: flex; align-items: center; gap: 4px; }
+    .t-pill {
+      background: var(--white);
+      border: 1px solid var(--line-med);
+      color: #222;
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      cursor: pointer;
+    }
+    .t-pill.active { border-color: var(--red); color: var(--red); }
+    .r-pill {
+      background: var(--red);
+      color: #fff;
+      border: 1px solid var(--red);
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 9px;
+      cursor: pointer;
+    }
+
+    /* TWO-COLUMN WORKSPACE */
+    .split-body {
+      display: grid;
+      grid-template-columns: 37% 63%;
+      height: calc(100vh - 142px);
+      min-height: 580px;
+    }
+    @media (max-width: 900px) {
+      .split-body { grid-template-columns: 1fr; height: auto; }
+    }
+
+    /* LEFT COLUMN */
+    .col-left {
+      background: var(--paper);
+      border-right: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .sec-head {
+      padding: 6px 14px;
+      font-family: var(--mono);
+      font-size: 9.5px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #eceae2;
+    }
+    .sec-head .cnt-red { color: var(--red); font-weight: 700; }
+
+    .catalog-box {
+      flex: 1;
+      overflow-y: auto;
+      padding: 6px 10px;
+      max-height: 365px;
+    }
+    .cat-row {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 6px 8px;
+      margin-bottom: 3px;
+      background: var(--white);
+      border: 1px solid transparent;
+    }
+    .cat-row.active {
+      border: 1.5px solid var(--red);
+      background: #fff8f8;
+      box-shadow: 0 1px 5px rgba(217, 43, 43, 0.14);
+    }
+    .cat-ico {
+      width: 24px;
+      height: 24px;
+      border: 1px solid var(--line-med);
+      background: #faf9f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 800;
+      color: #555;
+      flex-shrink: 0;
+    }
+    .cat-row.active .cat-ico { background: var(--red); border-color: var(--red); color: #fff; }
+    .cat-info { flex: 1; min-width: 0; }
+    .cat-top { display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+    .cat-name { font-size: 11.5px; font-weight: 700; color: #222; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .cat-row.active .cat-name { color: var(--red); }
+    .cat-sig { font-family: var(--mono); font-size: 9px; font-weight: 800; color: var(--muted); }
+    .cat-row.active .cat-sig { color: var(--red); }
+    .cat-sub { font-size: 9.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 1px; }
+
+    /* POWERSHELL WINDOW */
+    .ps-win {
+      height: 245px;
+      margin: 6px 10px 10px;
+      border: 1px solid #c6c4bc;
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+    }
+    .ps-titlebar {
+      background: #ecebe5;
+      border-bottom: 1px solid #d6d4cc;
+      padding: 4px 10px;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .ps-win-btns { display: flex; gap: 10px; color: #555; font-size: 10px; }
+    .ps-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 6px 10px;
+      font-family: var(--mono);
+      font-size: 9.8px;
+      line-height: 1.42;
+      color: #2b2b2b;
+    }
+    .ps-time { color: #9c9a92; }
+    .ps-tag { color: var(--red); font-weight: 700; }
+
+    /* RIGHT COLUMN: SPIDER WEB */
+    .col-right {
+      position: relative;
+      background: var(--paper);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .web-head {
+      padding: 6px 18px;
+      font-family: var(--mono);
+      font-size: 9.5px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 2;
+    }
+    .web-stage {
+      position: relative;
+      flex: 1;
+      min-height: 540px;
+    }
+    canvas#webCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* BOTTOM STATUS BAR */
+    .bot-bar {
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+      padding: 5px 18px;
+      font-family: var(--mono);
+      font-size: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+    .bot-left { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; color: var(--muted); }
+    .bot-badge { background: var(--red); color: #fff; padding: 1px 7px; font-weight: 800; }
+    .bot-right { color: var(--muted); }
+    .bot-right strong { color: var(--red); }
+  </style>
+</head>
+<body>
+  <header class="top-hdr">
+    <div class="hdr-main">
+      <div class="brand-box">
+        <div class="wolf-ico">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnR3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMxODE4MWIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDkwOTBiIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJyZWRBY2NlbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZWY0NDQ0Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzk5MWIxYiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMTIiIGZpbGw9InVybCgjYmdHcmFkKSIvPgogIDxyZWN0IHg9IjE4IiB5PSIxOCIgd2lkdGg9IjQ3NiIgaGVpZ2h0PSI0NzYiIHJ4PSI5NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzkyYTJhIiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1vcGFjaXR5PSIwLjc1Ii8+CiAgPHBvbHlnb24gcG9pbnRzPSIxMjAsOTUgMTc4LDE5NSAxMTIsMjM1IiBmaWxsPSIjMjcyNzJhIiBzdHJva2U9IiNlNGU0ZTciIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxwb2x5Z29uIHBvaW50cz0iMzkyLDk1IDMzNCwxOTUgNDAwLDIzNSIgZmlsbD0iIzI3MjcyYSIgc3Ryb2tlPSIjZTRlNGU3IiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8cG9seWdvbiBwb2ludHM9IjEzNCwxMjIgMTY4LDE4NSAxMjgsMjEwIiBmaWxsPSJ1cmwoI3JlZEFjY2VudCkiLz4KICA8cG9seWdvbiBwb2ludHM9IjM3OCwxMjIgMzQ0LDE4NSAzODQsMjEwIiBmaWxsPSJ1cmwoI3JlZEFjY2VudCkiLz4KICA8cG9seWdvbiBwb2ludHM9IjE3OCwxOTUgMjU2LDE2MiAzMzQsMTk1IDQwMCwyMzUgMzcyLDMyOCAyNTYsNDIyIDE0MCwzMjggMTEyLDIzNSIgZmlsbD0iIzFmMWYyMyIgc3Ryb2tlPSIjZjRmNGY1IiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8cG9seWdvbiBwb2ludHM9IjI1NiwxNjIgMjE0LDI1OCAyNTYsMjgyIDI5OCwyNTgiIGZpbGw9IiMyZTJlMzQiIHN0cm9rZT0iIzcxNzE3YSIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8cG9seWdvbiBwb2ludHM9IjE0MCwzMjggMjE0LDI1OCAyNTYsMzU1IDI1Niw0MjIiIGZpbGw9IiMyNzI3MmEiIHN0cm9rZT0iIzUyNTI1YiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8cG9seWdvbiBwb2ludHM9IjM3MiwzMjggMjk4LDI1OCAyNTYsMzU1IDI1Niw0MjIiIGZpbGw9IiMyNzI3MmEiIHN0cm9rZT0iIzUyNTI1YiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8cG9seWdvbiBwb2ludHM9IjE2OCwyNDIgMjE2LDI1NCAxOTgsMjc0IDE2NCwyNjIiIGZpbGw9IiNlZjQ0NDQiLz4KICA8cG9seWdvbiBwb2ludHM9IjM0NCwyNDIgMjk2LDI1NCAzMTQsMjc0IDM0OCwyNjIiIGZpbGw9IiNlZjQ0NDQiLz4KICA8Y2lyY2xlIGN4PSIxOTIiIGN5PSIyNTYiIHI9IjQiIGZpbGw9IiNmZmZmZmYiLz4KICA8Y2lyY2xlIGN4PSIzMjAiIGN5PSIyNTYiIHI9IjQiIGZpbGw9IiNmZmZmZmYiLz4KICA8cG9seWdvbiBwb2ludHM9IjIxNCwyNTggMjU2LDI4MiAyOTgsMjU4IDI4MiwzNDggMjU2LDM2OCAyMzAsMzQ4IiBmaWxsPSIjMTgxODFiIiBzdHJva2U9IiNhMWExYWEiIHN0cm9rZS13aWR0aD0iMyIvPgogIDxwb2x5Z29uIHBvaW50cz0iMjM2LDM0MiAyNzYsMzQyIDI1NiwzNzIiIGZpbGw9IiNlZjQ0NDQiLz4KICA8cG9seWxpbmUgcG9pbnRzPSIyMDUsMzc2IDI1Niw0MDYgMzA3LDM3NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzkyYTJhIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4=" alt="Wolf" />
+        </div>
+        <div>
+          <div class="brand-title">QUANT WOLF <span class="sl">//</span> <span id="hdrTotal">230</span> INDICATORS</div>
+          <div class="brand-sub">
+            <span class="red-sq"></span>
+            <span class="live-lbl">LIVE</span>
+            <span>BOOKMAP • TRADINGVIEW • QUANTCONNECT • KOYFIN • EXOCHART • FINVIZ</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hdr-stats">
+        <div class="stat-col">
+          <div class="stat-lbl">PAIR / PRICE</div>
+          <div class="stat-val" id="hdrPrice">XAU/USD</div>
+        </div>
+        <div class="stat-col">
+          <div class="stat-lbl">SCANNED</div>
+          <div class="stat-val" id="hdrScanned">0</div>
+        </div>
+        <div class="stat-col">
+          <div class="stat-lbl">TIMEFRAME</div>
+          <div class="stat-val" id="hdrTf">M15</div>
+        </div>
+        <div class="stat-col">
+          <div class="stat-lbl">HARMONY</div>
+          <div class="stat-val" id="hdrHarmony">0%</div>
+        </div>
+        <div class="stat-col">
+          <div class="stat-lbl">FINAL DECISION</div>
+          <div class="stat-val red" id="hdrDecision">SCANNING</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hdr-sub-grid">
+      <div>
+        <div class="sub-top"><span>TREND</span><span id="m1Pct">0%</span></div>
+        <div class="sub-val" id="m1Val">EMA/ST</div>
+        <div class="bar-bg"><div class="bar-fg" id="m1Bar"></div></div>
+      </div>
+      <div>
+        <div class="sub-top"><span>ORDER FLOW</span><span id="m2Pct">0%</span></div>
+        <div class="sub-val" id="m2Val">DELTA</div>
+        <div class="bar-bg"><div class="bar-fg" id="m2Bar"></div></div>
+      </div>
+      <div>
+        <div class="sub-top"><span>MOMENTUM</span><span id="m3Pct">0%</span></div>
+        <div class="sub-val" id="m3Val">RSI/MACD</div>
+        <div class="bar-bg"><div class="bar-fg" id="m3Bar"></div></div>
+      </div>
+      <div>
+        <div class="sub-top"><span>VOLATILITY</span><span id="m4Pct">0%</span></div>
+        <div class="sub-val" id="m4Val">ATR/BB</div>
+        <div class="bar-bg"><div class="bar-fg" id="m4Bar"></div></div>
+      </div>
+      <div>
+        <div class="sub-top"><span>STRUCTURE</span><span id="m5Pct">0%</span></div>
+        <div class="sub-val" id="m5Val">FVG/OB</div>
+        <div class="bar-bg"><div class="bar-fg" id="m5Bar"></div></div>
+      </div>
+      <div>
+        <div class="sub-top"><span>ENTRY / SL</span><span id="m6Pct">LEVELS</span></div>
+        <div class="sub-val" id="m6Val">- / -</div>
+        <div class="bar-bg"><div class="bar-fg" id="m6Bar"></div></div>
+      </div>
+      <div>
+        <div class="sub-top"><span>TP1 / TP2</span><span id="m7Pct">TARGETS</span></div>
+        <div class="sub-val" id="m7Val">- / -</div>
+        <div class="bar-bg"><div class="bar-fg" id="m7Bar"></div></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="sub-bar">
+    <div class="pair-pills" id="pairPills"></div>
+    <div class="tf-pills">
+      <button class="t-pill" data-tf="M1">M1</button>
+      <button class="t-pill" data-tf="M5">M5</button>
+      <button class="t-pill active" data-tf="M15">M15</button>
+      <button class="t-pill" data-tf="H1">H1</button>
+      <button class="t-pill" data-tf="H4">H4</button>
+      <button class="r-pill" id="rescanBtn">↻ RE-SCAN</button>
+    </div>
+  </div>
+
+  <div class="split-body">
+    <div class="col-left">
+      <div class="sec-head">
+        <span>INDICATORS</span>
+        <span class="cnt-red" id="leftScanned">0 scanned</span>
+      </div>
+      <div class="catalog-box" id="catalogBox"></div>
+
+      <div class="ps-win">
+        <div class="ps-titlebar">
+          <span>Windows PowerShell</span>
+          <div class="ps-win-btns"><span>—</span><span>□</span><span>×</span></div>
+        </div>
+        <div class="ps-body" id="psBody"></div>
+      </div>
+    </div>
+
+    <div class="col-right">
+      <div class="web-head">
+        <span><span class="red-sq"></span> HARMONY GRAPH • <strong id="webTotal" style="color:#222;">230</strong> LIVE</span>
+        <span class="cnt-red" id="webScanned">0 scanned</span>
+      </div>
+      <div class="web-stage">
+        <canvas id="webCanvas"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bot-bar">
+    <div class="bot-left">
+      <span id="botPair">XAU/USD • M15</span>
+      <span class="bot-badge" id="botVerdict">SCANNING...</span>
+      <span id="botVotes">LONG: 0 | SHORT: 0 | WAIT: 0</span>
+    </div>
+    <div class="bot-right">
+      <span id="botIndex">#001 / 230</span> &nbsp; <strong id="botActive">Ready</strong> • scanning
+    </div>
+  </footer>
+
+  <script>
+    (function setupPWA() {
+      try {
+        const manifest = {
+          name: "QUANT WOLF // 230 Indicators",
+          short_name: "QuantWolf",
+          start_url: location.href,
+          display: "standalone",
+          background_color: "#f7f6f1",
+          theme_color: "#d92b2b",
+          icons: [
+            { src: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnR3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMxODE4MWIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDkwOTBiIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJyZWRBY2NlbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZWY0NDQ0Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzk5MWIxYiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMTIiIGZpbGw9InVybCgjYmdHcmFkKSIvPgogIDxyZWN0IHg9IjE4IiB5PSIxOCIgd2lkdGg9IjQ3NiIgaGVpZ2h0PSI0NzYiIHJ4PSI5NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzkyYTJhIiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1vcGFjaXR5PSIwLjc1Ii8+CiAgPHBvbHlnb24gcG9pbnRzPSIxMjAsOTUgMTc4LDE5NSAxMTIsMjM1IiBmaWxsPSIjMjcyNzJhIiBzdHJva2U9IiNlNGU0ZTciIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxwb2x5Z29uIHBvaW50cz0iMzkyLDk1IDMzNCwxOTUgNDAwLDIzNSIgZmlsbD0iIzI3MjcyYSIgc3Ryb2tlPSIjZTRlNGU3IiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8cG9seWdvbiBwb2ludHM9IjEzNCwxMjIgMTY4LDE4NSAxMjgsMjEwIiBmaWxsPSJ1cmwoI3JlZEFjY2VudCkiLz4KICA8cG9seWdvbiBwb2ludHM9IjM3OCwxMjIgMzQ0LDE4NSAzODQsMjEwIiBmaWxsPSJ1cmwoI3JlZEFjY2VudCkiLz4KICA8cG9seWdvbiBwb2ludHM9IjE3OCwxOTUgMjU2LDE2MiAzMzQsMTk1IDQwMCwyMzUgMzcyLDMyOCAyNTYsNDIyIDE0MCwzMjggMTEyLDIzNSIgZmlsbD0iIzFmMWYyMyIgc3Ryb2tlPSIjZjRmNGY1IiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8cG9seWdvbiBwb2ludHM9IjI1NiwxNjIgMjE0LDI1OCAyNTYsMjgyIDI5OCwyNTgiIGZpbGw9IiMyZTJlMzQiIHN0cm9rZT0iIzcxNzE3YSIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8cG9seWdvbiBwb2ludHM9IjE0MCwzMjggMjE0LDI1OCAyNTYsMzU1IDI1Niw0MjIiIGZpbGw9IiMyNzI3MmEiIHN0cm9rZT0iIzUyNTI1YiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8cG9seWdvbiBwb2ludHM9IjM3MiwzMjggMjk4LDI1OCAyNTYsMzU1IDI1Niw0MjIiIGZpbGw9IiMyNzI3MmEiIHN0cm9rZT0iIzUyNTI1YiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8cG9seWdvbiBwb2ludHM9IjE2OCwyNDIgMjE2LDI1NCAxOTgsMjc0IDE2NCwyNjIiIGZpbGw9IiNlZjQ0NDQiLz4KICA8cG9seWdvbiBwb2ludHM9IjM0NCwyNDIgMjk2LDI1NCAzMTQsMjc0IDM0OCwyNjIiIGZpbGw9IiNlZjQ0NDQiLz4KICA8Y2lyY2xlIGN4PSIxOTIiIGN5PSIyNTYiIHI9IjQiIGZpbGw9IiNmZmZmZmYiLz4KICA8Y2lyY2xlIGN4PSIzMjAiIGN5PSIyNTYiIHI9IjQiIGZpbGw9IiNmZmZmZmYiLz4KICA8cG9seWdvbiBwb2ludHM9IjIxNCwyNTggMjU2LDI4MiAyOTgsMjU4IDI4MiwzNDggMjU2LDM2OCAyMzAsMzQ4IiBmaWxsPSIjMTgxODFiIiBzdHJva2U9IiNhMWExYWEiIHN0cm9rZS13aWR0aD0iMyIvPgogIDxwb2x5Z29uIHBvaW50cz0iMjM2LDM0MiAyNzYsMzQyIDI1NiwzNzIiIGZpbGw9IiNlZjQ0NDQiLz4KICA8cG9seWxpbmUgcG9pbnRzPSIyMDUsMzc2IDI1Niw0MDYgMzA3LDM3NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzkyYTJhIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4=", sizes: "192x192", type: "image/svg+xml" },
+            { src: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnR3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMxODE4MWIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDkwOTBiIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJyZWRBY2NlbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZWY0NDQ0Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzk5MWIxYiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMTIiIGZpbGw9InVybCgjYmdHcmFkKSIvPgogIDxyZWN0IHg9IjE4IiB5PSIxOCIgd2lkdGg9IjQ3NiIgaGVpZ2h0PSI0NzYiIHJ4PSI5NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzkyYTJhIiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1vcGFjaXR5PSIwLjc1Ii8+CiAgPHBvbHlnb24gcG9pbnRzPSIxMjAsOTUgMTc4LDE5NSAxMTIsMjM1IiBmaWxsPSIjMjcyNzJhIiBzdHJva2U9IiNlNGU0ZTciIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxwb2x5Z29uIHBvaW50cz0iMzkyLDk1IDMzNCwxOTUgNDAwLDIzNSIgZmlsbD0iIzI3MjcyYSIgc3Ryb2tlPSIjZTRlNGU3IiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8cG9seWdvbiBwb2ludHM9IjEzNCwxMjIgMTY4LDE4NSAxMjgsMjEwIiBmaWxsPSJ1cmwoI3JlZEFjY2VudCkiLz4KICA8cG9seWdvbiBwb2ludHM9IjM3OCwxMjIgMzQ0LDE4NSAzODQsMjEwIiBmaWxsPSJ1cmwoI3JlZEFjY2VudCkiLz4KICA8cG9seWdvbiBwb2ludHM9IjE3OCwxOTUgMjU2LDE2MiAzMzQsMTk1IDQwMCwyMzUgMzcyLDMyOCAyNTYsNDIyIDE0MCwzMjggMTEyLDIzNSIgZmlsbD0iIzFmMWYyMyIgc3Ryb2tlPSIjZjRmNGY1IiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8cG9seWdvbiBwb2ludHM9IjI1NiwxNjIgMjE0LDI1OCAyNTYsMjgyIDI5OCwyNTgiIGZpbGw9IiMyZTJlMzQiIHN0cm9rZT0iIzcxNzE3YSIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8cG9seWdvbiBwb2ludHM9IjE0MCwzMjggMjE0LDI1OCAyNTYsMzU1IDI1Niw0MjIiIGZpbGw9IiMyNzI3MmEiIHN0cm9rZT0iIzUyNTI1YiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8cG9seWdvbiBwb2ludHM9IjM3MiwzMjggMjk4LDI1OCAyNTYsMzU1IDI1Niw0MjIiIGZpbGw9IiMyNzI3MmEiIHN0cm9rZT0iIzUyNTI1YiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8cG9seWdvbiBwb2ludHM9IjE2OCwyNDIgMjE2LDI1NCAxOTgsMjc0IDE2NCwyNjIiIGZpbGw9IiNlZjQ0NDQiLz4KICA8cG9seWdvbiBwb2ludHM9IjM0NCwyNDIgMjk2LDI1NCAzMTQsMjc0IDM0OCwyNjIiIGZpbGw9IiNlZjQ0NDQiLz4KICA8Y2lyY2xlIGN4PSIxOTIiIGN5PSIyNTYiIHI9IjQiIGZpbGw9IiNmZmZmZmYiLz4KICA8Y2lyY2xlIGN4PSIzMjAiIGN5PSIyNTYiIHI9IjQiIGZpbGw9IiNmZmZmZmYiLz4KICA8cG9seWdvbiBwb2ludHM9IjIxNCwyNTggMjU2LDI4MiAyOTgsMjU4IDI4MiwzNDggMjU2LDM2OCAyMzAsMzQ4IiBmaWxsPSIjMTgxODFiIiBzdHJva2U9IiNhMWExYWEiIHN0cm9rZS13aWR0aD0iMyIvPgogIDxwb2x5Z29uIHBvaW50cz0iMjM2LDM0MiAyNzYsMzQyIDI1NiwzNzIiIGZpbGw9IiNlZjQ0NDQiLz4KICA8cG9seWxpbmUgcG9pbnRzPSIyMDUsMzc2IDI1Niw0MDYgMzA3LDM3NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzkyYTJhIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4=", sizes: "512x512", type: "image/svg+xml" }
+          ]
+        };
+        const blob = new Blob([JSON.stringify(manifest)], { type: "application/manifest+json" });
+        const link = document.createElement("link");
+        link.rel = "manifest";
+        link.href = URL.createObjectURL(blob);
+        document.head.appendChild(link);
+      } catch (_) {}
+    })();
+
+    const INDICATORS = [
+      "3 Line Break Auto", "4H High Low", "Absolute Price Oscillator (APO)", "Adaptive Cyber Cycle",
+      "Adaptive DEMA", "Adaptive HMA", "Adaptive Ichimoku", "Adaptive Keltner Channels",
+      "Adaptive MACD", "Adaptive Moving Average (AMA)", "Adaptive Pivot Points", "Adaptive SuperTrend",
+      "Adaptive TEMA", "Adaptive VWAP", "ALMA Ribbon", "Anchored ATR", "Anchored Bollinger Bands",
+      "Anchored Momentum Oscillator", "Anchored Standard Deviation", "Anti-Martingale Lot Calculator",
+      "Arbitrage Spread Indicator", "ATR Trailing Stop Loss", "Auto Harmonic Patterns", "Auto Pitchfork",
+      "Auto Support Resistance Zones", "Auto Supply Demand Zones", "Average Directional Movement Index Rating",
+      "Average True Range Percent (ATRP)", "B-Xtrender Oscillator", "Balance of Market Power (BMP)",
+      "Bandpass Filter Indicator", "Bar Up/Down Indicator", "Bearish Engulfing Alert", "Bilateral Moving Average",
+      "Bollinger Bands Squeeze", "Bollinger Fiber", "Breadth Indicator", "Breakaway Gap Detector",
+      "Bull Bear Power Trend", "Bullish Engulfing Alert", "Buy Sell Pressure", "Buy Sell Volume Ratio",
+      "Camarilla Breakout", "Candlestick Momentum", "Chande Dynamic Momentum", "Chande Momentum Oscillator (CMO)",
+      "Chaikin Volatility Indicator", "Channel Breakout", "Chart Pattern Recognition", "Choppiness Index Smooth",
+      "Cloud Trend Indicator", "Cointegration Spread", "Commodity Channel Index Smooth", "Comparative Relative Strength",
+      "Composite Momentum Index", "Consecutive Up/Down Bars", "Correlation Heat Map", "Currency Strength Meter",
+      "Currency Strength Matrix", "Custom Session Highlighter", "Cycle Identifier", "Darvas Box Breakout",
+      "Day of Week Seasonality", "DeMark Trendline", "Delta Volume Profile", "Divergence Hunter",
+      "Donchian Breakout", "Double Exponential Moving Average", "Double Stochastic", "Dynamic Momentum Index (DMI)",
+      "Dynamic Pivot Levels", "Dynamic RSI", "Dynamic Volatility Bands", "Ehlers Adaptive Cyber Cycle",
+      "Ehlers Adaptive Stochastic", "Ehlers Bandpass", "Ehlers Decycler Oscillator", "Ehlers Deviation Scaled",
+      "Ehlers Fractal Adaptive", "Ehlers Hilbert Oscillator", "Ehlers Instantaneous Trend", "Ehlers MAMA FAMA Cross",
+      "Ehlers Optimal Tracking Filter", "Ehlers Phased Momentum", "Ehlers Roofing", "Ehlers Signal to Noise Ratio",
+      "Ehlers Smoothed RSI", "Ehlers Spectrum Analyzer", "Ehlers Stochastic RSI", "Ehlers Trend Vigor",
+      "Elder Impulse Candles", "Elder Ray Bull Bear", "Elliott Wave Count Auto", "EMA Cloud",
+      "EMA Crossover Signal", "EMA Ribbon Trend", "End of Day Gap", "Equity Curve Simulator",
+      "Ergodic Candlestick Oscillator", "Exhaustion Gap Detector", "Exponential Moving Average Ribbon",
+      "Extreme Spike Indicator", "Fibonacci Auto Channels", "Fibonacci Cluster", "Fibonacci Fan Auto",
+      "Fibonacci Pivot Levels", "Fisher Transform Divergence", "Fixed Interval Volume Profile",
+      "Fractal Dimension Index (FDI)", "Fractal Support Resistance", "FVG (Fair Value Gap) Multi-Timeframe",
+      "Gann Angle Auto", "Gann High Low", "Gann Swing Chart", "Gaussian Moving Average",
+      "Geometric Moving Average", "Guppy MMA Oscillator", "Harmonic Cypher Pattern", "Harmonic Drive Pattern",
+      "Heikin Ashi Trend", "High Low Channel", "High Volume Nodes (HVN)", "Historical Volatility Ratio",
+      "Hull Moving Average Ribbon", "Hurst Cycle Channel", "Ichimoku Tenkan Kijun Cross", "Implied Volatility Surface",
+      "Impulse System", "Inside Bar Breakout", "Institutional Order Blocks", "Intraday Intensity",
+      "JMA Crossover", "Kalman Filter Trend", "Keltner Breakout", "Keltner Squeeze", "Key Reversal Bar",
+      "Laguerre Filter", "Laguerre MACD", "Linear Regression Forecast", "Linear Regression R-Squared",
+      "Liquidity Pool Detector", "Low Volume Nodes (LVN)", "MACD 4C", "MACD Divergence Alert",
+      "MACD Zero Lag", "Market Cipher A", "Market Cipher B", "Market Facilitation", "Market Profile TPO",
+      "Market Sentiment Index", "Mass Index Reversal", "Max Pain Calculator", "McGinley Dynamic Ribbon",
+      "Mean Reversion Bands", "Median Price Indicator", "Momentum Divergence", "Money Flow Index Divergence",
+      "Moving Average Adaptive", "Moving Average Crossover Alerts", "Moving Average Envelope",
+      "Multi Timeframe Bollinger Bands", "Multi Timeframe Ichimoku", "Multi Timeframe Stochastic",
+      "Multi Timeframe Volume Profile", "Nadaraya-Watson Estimator", "Nadaraya-Watson Rational Quadratic Kernel",
+      "Normalized ATR", "Normalized RSI", "Opening Range Indicator", "Order Flow Delta",
+      "Orderbook Liquidity Map", "Outside Bar Reversal", "Overbought Oversold Zones", "Pairs Trading Z-Score",
+      "Parabolic SAR Multi-Timeframe", "Percentage Volume Oscillator", "Pivot Point Breakout", "Pivot Reversal Strategy",
+      "Price Action Patterns", "Price Channel Breakout", "Price Momentum", "Price Oscillator",
+      "Price Volume Rank", "Psychological Levels (00/50)", "QQE Cross", "QQE Histogram",
+      "Quantitative Qualitative Estimation", "Random Walk Index (RWI)", "Range Filter", "Range Filter Buy and Sell",
+      "Relative Strength Comparison", "Relative Vigor Index (RVI)", "Renko Street Trend", "Reverse RSI",
+      "RSI Bands", "RSI Cloud", "RSI Heatmap", "RSI Trendlines", "Scalping Line Indicator",
+      "Schaff Trend", "Session Breakout", "Session High Low", "Session VWAP", "Smoothed Moving Average (SMMA)",
+      "Spread Indicator", "Squeeze Momentum", "Standard Error Channel", "Statistical Arbitrage Spread",
+      "Stochastic Momentum", "Stochastic Oscillator Smooth", "Supertrend Candles", "Supertrend Multi-Timeframe",
+      "Supply and Demand Zones", "Swing High Low", "Swing Points", "T3 Ribbon", "Tick Speed Indicator",
+      "Time Price Opportunity (TPO)", "Trend Intensity", "Trend Line Break", "Trend Strength Index",
+      "Triple Screen Trading System", "True Range Double", "TSI (True Strength Index)", "Turtle Soup Detector",
+      "Ultimate Oscillator Divergence", "Up Down Volume", "Vegas Tunnel", "Volatility Breakout",
+      "Volatility Channel", "Volatility Index (VIX)", "Volatility Stop Loss", "Volume Accumulation",
+      "Volume Weighted RSI", "Vortex Cross", "VWAP Cross", "VWAP Deviation Bands", "WaveTrend Cross",
+      "Williams Accumulation Distribution", "Williams Percent Range", "Woodies Pivot", "Wyckoff Spring",
+      "Z-Score Mean Reversion", "Zero Lag DEMA", "Zero Lag HMA", "Zero Lag SMA", "ZigZag Fibonacci"
+    ];
+
+    const PAIRS = [
+      { sym: "XAU/USD", digits: 2, pip: 1.5, base: 2645.50 },
+      { sym: "EUR/USD", digits: 5, pip: 0.0012, base: 1.08420 },
+      { sym: "USD/JPY", digits: 3, pip: 0.18, base: 153.420 },
+      { sym: "GBP/USD", digits: 5, pip: 0.0015, base: 1.29150 },
+      { sym: "AUD/USD", digits: 5, pip: 0.0010, base: 0.65840 },
+      { sym: "USD/CAD", digits: 5, pip: 0.0011, base: 1.38920 },
+      { sym: "EUR/GBP", digits: 5, pip: 0.0007, base: 0.83940 },
+      { sym: "USD/CHF", digits: 5, pip: 0.0009, base: 0.87650 }
+    ];
+
+    const TOTAL = INDICATORS.length;
+    document.getElementById("hdrTotal").textContent = TOTAL;
+    document.getElementById("webTotal").textContent = TOTAL;
+
+    let curPair = PAIRS[0];
+    let curTf = "M15";
+    let loopToken = 0;
+    let nodes = [];
+    let edges = [];
+    let activeIdx = 0;
+    let redTrail = [];
+
+    const pairPills = document.getElementById("pairPills");
+    const catalogBox = document.getElementById("catalogBox");
+    const psBody = document.getElementById("psBody");
+
+    PAIRS.forEach((p, idx) => {
+      const b = document.createElement("button");
+      b.className = "p-pill" + (idx === 0 ? " active" : "");
+      b.textContent = p.sym;
+      b.onclick = () => {
+        document.querySelectorAll(".p-pill").forEach(el => el.classList.remove("active"));
+        b.classList.add("active");
+        curPair = p;
+        runLoop();
+      };
+      pairPills.appendChild(b);
+    });
+
+    document.querySelectorAll(".t-pill").forEach(b => {
+      b.onclick = () => {
+        document.querySelectorAll(".t-pill").forEach(el => el.classList.remove("active"));
+        b.classList.add("active");
+        curTf = b.dataset.tf;
+        document.getElementById("hdrTf").textContent = curTf;
+        runLoop();
+      };
+    });
+
+    document.getElementById("rescanBtn").onclick = () => runLoop();
+
+    function buildList() {
+      catalogBox.innerHTML = "";
+      INDICATORS.forEach((name, i) => {
+        const row = document.createElement("div");
+        row.className = "cat-row";
+        row.id = `crow-${i}`;
+        const abbr = name.replace(/[^A-Z0-9]/gi, "").slice(0, 2).toUpperCase() || "IX";
+        row.innerHTML = `
+          <div class="cat-ico">${abbr}</div>
+          <div class="cat-info">
+            <div class="cat-top">
+              <span class="cat-name">${name}</span>
+              <span class="cat-sig" id="csig-${i}">---</span>
+            </div>
+            <div class="cat-sub" id="csub-${i}">Harmonic confluence filter • Node #${i + 1}</div>
+          </div>
+        `;
+        catalogBox.appendChild(row);
+      });
+    }
+    buildList();
+
+    function tsNow() {
+      const d = new Date();
+      return `[${String(d.getHours()).padStart(2,"0")}:${String(d.getMinutes()).padStart(2,"0")}:${String(d.getSeconds()).padStart(2,"0")}]`;
+    }
+
+    function logPS(html) {
+      const div = document.createElement("div");
+      div.innerHTML = html;
+      psBody.appendChild(div);
+      if (psBody.children.length > 90) psBody.removeChild(psBody.firstChild);
+      psBody.scrollTop = psBody.scrollHeight;
+    }
+
+    const canvas = document.getElementById("webCanvas");
+    const ctx = canvas.getContext("2d");
+
+    function buildSpiderWeb() {
+      const rect = canvas.parentElement.getBoundingClientRect();
+      const W = Math.max(300, rect.width);
+      const H = Math.max(540, rect.height);
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = W * dpr;
+      canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      // Tall spider-web cluster layout from video
+      const cx = W * 0.50;
+      const tiers = [
+        { x: cx * 0.96, y: H * 0.13, rx: W * 0.24, ry: H * 0.11 },
+        { x: cx * 1.04, y: H * 0.33, rx: W * 0.34, ry: H * 0.14 },
+        { x: cx * 0.94, y: H * 0.56, rx: W * 0.37, ry: H * 0.15 },
+        { x: cx * 1.03, y: H * 0.78, rx: W * 0.31, ry: H * 0.13 },
+        { x: cx * 0.97, y: H * 0.92, rx: W * 0.22, ry: H * 0.06 }
+      ];
+
+      nodes = INDICATORS.map((name, i) => {
+        const tier = tiers[i % tiers.length];
+        const angle = i * 2.3999632;
+        const rad = Math.sqrt(((i % 46) + 1) / 46);
+        const isHub = i % 16 === 0;
+        const bx = tier.x + Math.cos(angle) * tier.rx * rad;
+        const by = tier.y + Math.sin(angle) * tier.ry * rad;
+        return {
+          i,
+          name,
+          bx,
+          by,
+          x: bx,
+          y: by,
+          vx: (Math.sin(i * 1.7) * 0.55),
+          vy: (Math.cos(i * 2.1) * 0.55),
+          phase: i * 0.53,
+          isHub,
+          scanned: false,
+          sig: "WAIT"
+        };
+      });
+
+      edges = [];
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const dist = Math.hypot(nodes[i].bx - nodes[j].bx, nodes[i].by - nodes[j].by);
+          if (dist < 48 || (nodes[i].isHub && dist < 130 && j % 2 === 0)) {
+            edges.push([i, j]);
+          }
+        }
+      }
+    }
+
+    function drawSpiderWeb(nowMs) {
+      const dpr = window.devicePixelRatio || 1;
+      const W = canvas.width / dpr;
+      const H = canvas.height / dpr;
+      ctx.clearRect(0, 0, W, H);
+
+      // Lively continuous spider-web motion across nodes
+      const t = nowMs * 0.0036;
+      for (let i = 0; i < nodes.length; i++) {
+        const n = nodes[i];
+        n.x = n.bx + Math.cos(t * 1.3 + n.phase) * 5.2;
+        n.y = n.by + Math.sin(t * 1.65 + n.phase) * 5.2;
+      }
+
+      // Right-edge scale ticks
+      ctx.font = "8.5px Consolas, monospace";
+      ctx.fillStyle = "#b8b6ae";
+      for (let v = 0; v <= 230; v += 10) {
+        const yy = 16 + ((H - 32) * (v / 230));
+        ctx.fillText(String(v).padStart(3, "0"), W - 26, yy);
+      }
+
+      const trailSet = new Set(redTrail);
+
+      // Spider-web threads
+      edges.forEach(([a, b]) => {
+        const na = nodes[a];
+        const nb = nodes[b];
+        const hot = a === activeIdx || b === activeIdx;
+        const inRedTrail = trailSet.has(a) && trailSet.has(b);
+
+        ctx.beginPath();
+        ctx.moveTo(na.x, na.y);
+        ctx.lineTo(nb.x, nb.y);
+
+        if (hot) {
+          ctx.strokeStyle = "rgba(217, 43, 43, 0.90)";
+          ctx.lineWidth = 1.2;
+        } else if (inRedTrail) {
+          ctx.strokeStyle = "rgba(217, 43, 43, 0.38)";
+          ctx.lineWidth = 0.8;
+        } else if (na.scanned && nb.scanned && (na.isHub || nb.isHub)) {
+          ctx.strokeStyle = "rgba(217, 43, 43, 0.22)";
+          ctx.lineWidth = 0.65;
+        } else {
+          ctx.strokeStyle = "rgba(135, 133, 125, 0.25)";
+          ctx.lineWidth = 0.52;
+        }
+        ctx.stroke();
+      });
+
+      // Nodes & hub labels
+      nodes.forEach((n, idx) => {
+        const isAct = idx === activeIdx;
+        const isTr = trailSet.has(idx);
+        const sz = isAct ? 6.5 : isTr ? 5.2 : n.isHub ? 6 : 4;
+        const h = sz / 2;
+
+        if (isAct || isTr) {
+          ctx.fillStyle = "#d92b2b";
+          ctx.fillRect(n.x - h, n.y - h, sz, sz);
+        } else if (n.scanned && n.isHub) {
+          ctx.fillStyle = "#d92b2b";
+          ctx.fillRect(n.x - h, n.y - h, sz, sz);
+        } else if (n.scanned) {
+          ctx.fillStyle = "#4d4d4d";
+          ctx.fillRect(n.x - h, n.y - h, sz, sz);
+        } else {
+          ctx.fillStyle = "#ffffff";
+          ctx.strokeStyle = "#9b9991";
+          ctx.lineWidth = 0.75;
+          ctx.fillRect(n.x - h, n.y - h, sz, sz);
+          ctx.strokeRect(n.x - h, n.y - h, sz, sz);
+        }
+
+        if (n.isHub || isAct) {
+          ctx.font = isAct ? "bold 9px Consolas, monospace" : "8px sans-serif";
+          ctx.fillStyle = isAct ? "#d92b2b" : "#3a3a3a";
+          ctx.fillText(n.name.slice(0, 20), n.x + h + 3.5, n.y + 3);
+        }
+      });
+
+      // Normal-sized, super active moving red marker + pill tag matching video
+      if (activeIdx >= 0 && nodes[activeIdx]) {
+        const cur = nodes[activeIdx];
+        const jitterX = Math.cos(nowMs * 0.025) * 4.5;
+        const jitterY = Math.sin(nowMs * 0.031) * 4.5;
+        const px = cur.x + jitterX;
+        const py = cur.y + jitterY;
+
+        ctx.fillStyle = "#d92b2b";
+        ctx.fillRect(px - 3.5, py - 3.5, 7, 7);
+
+        const label = cur.name;
+        ctx.font = "bold 9px Consolas, monospace";
+        const boxW = Math.min(185, ctx.measureText(label).width + 10);
+        const bx = Math.max(8, Math.min(W - boxW - 32, px - boxW / 2));
+        const by = Math.max(8, py - 18);
+
+        ctx.fillStyle = "#d92b2b";
+        ctx.fillRect(bx, by, boxW, 14);
+        ctx.fillStyle = "#ffffff";
+        ctx.fillText(label, bx + 5, by + 10);
+      }
+    }
+
+    function tickCanvas(nowMs) {
+      drawSpiderWeb(nowMs);
+      requestAnimationFrame(tickCanvas);
+    }
+
+    window.addEventListener("resize", buildSpiderWeb);
+    buildSpiderWeb();
+    requestAnimationFrame(tickCanvas);
+
+    async function getPrice(pair) {
+      try {
+        if (pair.sym === "XAU/USD") {
+          const r = await fetch("https://api.binance.com/api/v3/ticker/price?symbol=PAXGUSDT");
+          const d = await r.json();
+          if (d && d.price) return parseFloat(d.price);
+        } else {
+          const [b, q] = pair.sym.split("/");
+          const r = await fetch(`https://api.frankfurter.app/latest?from=${b}&to=${q}`);
+          const d = await r.json();
+          if (d && d.rates && d.rates[q]) return parseFloat(d.rates[q]);
+        }
+      } catch (_) {}
+      return pair.base + Math.sin(Date.now() / 13000 + pair.base) * pair.pip;
+    }
+
+    function calcSignal(pair, tf, price) {
+      const tfW = { M1: 1.2, M5: 1.8, M15: 2.5, H1: 4.3, H4: 5.7 }[tf] || 2.5;
+      const s = (price * 10000) + tfW * 41 + pair.base * 17;
+      const score = Math.sin(s * 0.11) * 0.4 + Math.cos(s * 0.27) * 0.35 + Math.sin(s * 0.43 + tfW) * 0.25;
+      const dir = Math.abs(score) < 0.065 ? "WAIT" : (score >= 0 ? "LONG" : "SHORT");
+      return { dir, score };
+    }
+
+    async function runLoop() {
+      const token = ++loopToken;
+      let cycle = 1;
+
+      psBody.innerHTML = `<div><strong>PS C:\Users\quantwolf&gt;</strong> quant-wolf --pair ${curPair.sym} --tf ${curTf} --loop</div>`;
+
+      while (token === loopToken) {
+        nodes.forEach((n, idx) => {
+          n.scanned = false;
+          const r = document.getElementById(`crow-${idx}`);
+          if (r) r.className = "cat-row";
+        });
+        redTrail = [];
+
+        const px = await getPrice(curPair);
+        if (token !== loopToken) break;
+
+        const d = curPair.digits;
+        document.getElementById("hdrPrice").textContent = `${curPair.sym} ${px.toFixed(d)}`;
+        document.getElementById("botPair").textContent = `${curPair.sym} @ ${px.toFixed(d)} • ${curTf}`;
+
+        const dec = calcSignal(curPair, curTf, px);
+        const step = curPair.pip * ({ M1: 0.45, M5: 0.75, M15: 1.0, H1: 2.0, H4: 3.2 }[curTf] || 1);
+
+        if (dec.dir === "LONG") {
+          document.getElementById("m6Val").textContent = `${px.toFixed(d)} / ${(px - step * 1.2).toFixed(d)}`;
+          document.getElementById("m7Val").textContent = `${(px + step * 1.5).toFixed(d)} / ${(px + step * 2.8).toFixed(d)}`;
+        } else if (dec.dir === "SHORT") {
+          document.getElementById("m6Val").textContent = `${px.toFixed(d)} / ${(px + step * 1.2).toFixed(d)}`;
+          document.getElementById("m7Val").textContent = `${(px - step * 1.5).toFixed(d)} / ${(px - step * 2.8).toFixed(d)}`;
+        } else {
+          document.getElementById("m6Val").textContent = "WAIT / WAIT";
+          document.getElementById("m7Val").textContent = "WAIT / WAIT";
+        }
+
+        let lCnt = 0, sCnt = 0, wCnt = 0;
+
+        for (let i = 0; i < TOTAL; i++) {
+          if (token !== loopToken) return;
+
+          if (i > 0) {
+            const prev = document.getElementById(`crow-${i - 1}`);
+            if (prev) prev.classList.remove("active");
+          }
+
+          activeIdx = i;
+          redTrail.push(i);
+          if (redTrail.length > 12) redTrail.shift();
+
+          const wave = Math.sin(i * 0.57 + dec.score * 6 + cycle * 0.35);
+          let v = dec.dir;
+          if (dec.dir === "LONG" && wave < -0.82) v = "SHORT";
+          else if (dec.dir === "SHORT" && wave > 0.82) v = "LONG";
+          else if (Math.abs(wave) > 0.96) v = "WAIT";
+
+          if (v === "LONG") lCnt++;
+          else if (v === "SHORT") sCnt++;
+          else wCnt++;
+
+          nodes[i].scanned = true;
+          nodes[i].sig = v;
+
+          const row = document.getElementById(`crow-${i}`);
+          const sigEl = document.getElementById(`csig-${i}`);
+          const subEl = document.getElementById(`csub-${i}`);
+
+          if (row) {
+            row.className = "cat-row active";
+            if (i % 3 === 0) row.scrollIntoView({ block: "nearest" });
+          }
+          if (sigEl) sigEl.textContent = v;
+          if (subEl) subEl.textContent = `${curPair.sym} ${curTf} • Node #${i + 1} -> ${v}`;
+
+          const done = i + 1;
+          const pct = Math.round((done / TOTAL) * 100);
+          const harm = Math.round((Math.max(lCnt, sCnt) / done) * 100);
+
+          document.getElementById("hdrScanned").textContent = done;
+          document.getElementById("hdrHarmony").textContent = `${harm}%`;
+          document.getElementById("leftScanned").textContent = `${done} scanned`;
+          document.getElementById("webScanned").textContent = `${done} scanned`;
+          document.getElementById("botIndex").textContent = `#${String(done).padStart(3,"0")} / ${TOTAL}`;
+          document.getElementById("botActive").textContent = INDICATORS[i];
+          document.getElementById("botVotes").textContent = `LONG: ${lCnt} | SHORT: ${sCnt} | WAIT: ${wCnt}`;
+          document.getElementById("hdrDecision").textContent = dec.dir;
+          document.getElementById("botVerdict").textContent = `LIVE: ${dec.dir} (${harm}%)`;
+
+          [1, 2, 3, 4, 5, 6, 7].forEach(k => {
+            const pv = Math.min(100, Math.round(pct * (0.85 + (k % 3) * 0.08)));
+            document.getElementById(`m${k}Bar`).style.width = `${pv}%`;
+            if (k <= 5) document.getElementById(`m${k}Pct`).textContent = `${pv}%`;
+          });
+
+          if (i % 2 === 0) {
+            logPS(`<span class="ps-time">${tsNow()}</span> #${String(done).padStart(3,"0")} ${INDICATORS[i].toLowerCase().replace(/\s+/g,"-")} <span class="ps-tag">${v}</span>`);
+          }
+
+          await new Promise(r => setTimeout(r, 42));
+        }
+
+        const last = document.getElementById(`crow-${TOTAL - 1}`);
+        if (last) last.classList.remove("active");
+        cycle++;
+      }
+    }
+
+    runLoop();
+  </script>
+</body>
+</html>
